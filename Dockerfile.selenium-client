@@ -8,6 +8,6 @@ ADD Gemfile.lock /test/Gemfile.lock
 
 RUN bundle install
 
-ADD . /test/
+ADD features /test/features
 
 ENTRYPOINT ["cucumber"]

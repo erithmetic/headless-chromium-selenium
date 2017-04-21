@@ -18,22 +18,19 @@ RUN chown -R seluser:seluser /opt/selenium
 
 WORKDIR /
 
+# Installing chromium-browser gives us all dependencies we need to run our
+# custom chromium build
 RUN apt-get update && apt-get install -y \
+  chromium-browser \
   curl \
   git \
   libgconf2-4 \
+  libgtk-3-0 \
   unzip
-  #libpangocairo-1.0-0 \
-  #libglib2.0-0 \
-  #libnss3 \
-  #libxcomposite1 \
-  #libxcursor1 \
-  #libxrandr2 \
-  #libxss1
 
+# Install chromium
 RUN git clone https://github.com/scheib/chromium-latest-linux.git
-ENV RELEASE=466352
-RUN cd chromium-latest-linux && ./update.sh $RELEASE
+RUN cd chromium-latest-linux && ./update.sh 466352
 RUN chown -R seluser:seluser /chromium-latest-linux
 
 ADD chromedriver/build /chromedriver

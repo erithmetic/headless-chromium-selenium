@@ -22,3 +22,5 @@ services:
       - seleniumnode
     links: 
       - "seleniumnode:seleniumnode"
+    environment:
+      CAPYBARA_DRIVER: selenium_headless_chromium

@@ -1,0 +1,24 @@
+version: "2"
+
+services:
+  test:
+    build:
+      context: .
+    ports: 
+      - "9222:9222"
+
+  seleniumnode:
+    build:
+      context: selenium
+    ports: 
+      - "9222:9222"
+      - "9515:9515"
+
+  testselenium:
+    build:
+      context: .
+      dockerfile: Dockerfile.selenium-client
+    depends_on:
+      - seleniumnode
+    links: 
+      - "seleniumnode:seleniumnode"

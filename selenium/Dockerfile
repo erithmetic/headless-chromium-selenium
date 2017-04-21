@@ -21,14 +21,15 @@ WORKDIR /
 RUN apt-get update && apt-get install -y \
   curl \
   git \
-  libpangocairo-1.0-0 \
   libgconf2-4 \
-  libglib2.0-0 \
-  libnss3 \
-  libxcomposite1 \
-  libxcursor1 \
-  libxrandr2 \
-  libxss1
+  unzip
+  #libpangocairo-1.0-0 \
+  #libglib2.0-0 \
+  #libnss3 \
+  #libxcomposite1 \
+  #libxcursor1 \
+  #libxrandr2 \
+  #libxss1
 
 RUN git clone https://github.com/scheib/chromium-latest-linux.git
 ENV RELEASE=466352

@@ -41,6 +41,12 @@ RUN echo "DBUS_SESSION_BUS_ADDRESS=/dev/null" >> /etc/environment
 
 ENV PATH=$PATH:/chromedriver
 
+COPY \
+  entry_point.sh \
+  functions.sh \
+    /opt/bin/
+RUN chmod +x /opt/bin/entry_point.sh
+
 USER seluser
 
-CMD ["java","-jar","/opt/selenium/selenium-server-standalone.jar"]
+EXPOSE 4444

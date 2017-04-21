@@ -9,7 +9,7 @@ require 'selenium-webdriver'
 Capybara.register_driver :headless_chromium do |app|
   caps = Selenium::WebDriver::Remote::Capabilities.chrome(
     "chromeOptions" => {
-      'binary' => "/chromium-latest-linux/466395/chrome-linux/chrome",
+      'binary' => "/chromium-latest-linux/latest/chrome-linux/chrome",
       'args' => %w{headless no-sandbox disable-gpu}
     }
   )
@@ -23,7 +23,7 @@ end
 Capybara.register_driver :selenium_headless_chromium do |app|
   caps = Selenium::WebDriver::Remote::Capabilities.chrome(
     "chromeOptions" => {
-      'binary' => "/chromium-latest-linux/466419/chrome-linux/chrome",
+      'binary' => "/chromium-latest-linux/latest/chrome-linux/chrome",
       'args' => %w{headless no-sandbox disable-gpu}
     }
   )

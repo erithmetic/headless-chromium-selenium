@@ -7,6 +7,16 @@ The latest build of chromium also lets you do this, but unfortunately the 2.29
 build of chromedriver (the interface between selenium and chrome/chromium) does
 not support chrome > 58.
 
-This is a sample of a custom-built chromedriver.
+This is a sample of a custom-built chromedriver with latest headless chromium.
 
 
+# Running the sample
+
+Simply run:
+
+```
+docker-compose build test
+docker-compose run test
+```
+
+All tests should pass!

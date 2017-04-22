@@ -12,7 +12,8 @@ This is a sample of a custom-built chromedriver with latest headless chromium.
 
 # Running the sample
 
-Simply run:
+
+To run a test container in which ruby/capybara runs a local chromedriver, run:
 
 ```
 docker-compose build test
@@ -20,3 +21,10 @@ docker-compose run test
 ```
 
 All tests should pass!
+
+To test out a modified selenium base node image, run:
+
+```
+docker-compose build
+docker-compose run testselenium
+```
